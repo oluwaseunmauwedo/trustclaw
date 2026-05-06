@@ -51,10 +51,10 @@ export async function runMigration(args: RunMigrationArgs): Promise<void> {
         `prisma/schema.prisma not found at ${repoRoot}. The provided repoRoot is wrong.`,
       );
     }
-    // Use `pnpm dlx` so the command works even when the cloned fork hasn't
-    // had `pnpm install` run on it (the typical fork-deploy case). Pin to
-    // the same major as the repo's lockfile to stay schema-compatible.
-    await exec("pnpm dlx prisma@^7.3.0 db push --accept-data-loss", {
+    // Use `npx -y` so the command works even when the cloned fork hasn't
+    // had its deps installed (the typical fork-deploy case). Pin to the
+    // same major as the repo's lockfile to stay schema-compatible.
+    await exec("npx -y prisma@^7.3.0 db push --accept-data-loss", {
       cwd: repoRoot,
       env: { ...process.env, DATABASE_URL: args.databaseUrl },
     });

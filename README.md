@@ -13,7 +13,7 @@ A 24/7 personal AI assistant with 1000+ tools via **OAuth** and **sandboxed exec
 ```bash
 git clone https://github.com/ComposioHQ/trustclaw && cd trustclaw
 pnpm install
-pnpm dlx @composio/trustclaw deploy
+npx @composio/trustclaw deploy
 ```
 
 That's it. The CLI handles the entire flow:
@@ -31,7 +31,7 @@ That's it. The CLI handles the entire flow:
 
 **Prerequisites:**
 
-- A [Vercel account](https://vercel.com) (`pnpm dlx vercel login` once)
+- A [Vercel account](https://vercel.com) (`npx vercel login` once)
 - A [GitHub account](https://github.com) (`gh auth login` once)
 - A free [Composio API key](https://dashboard.composio.dev/login?next=%2F~%2Fproject%2Fsettings%2Fapi-keys&flow=developer)
 

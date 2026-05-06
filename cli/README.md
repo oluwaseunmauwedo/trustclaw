@@ -7,7 +7,7 @@ One-command deploy for [TrustClaw](https://github.com/ComposioHQ/trustclaw) on V
 ```bash
 git clone https://github.com/ComposioHQ/trustclaw && cd trustclaw
 pnpm install
-pnpm dlx @composio/trustclaw deploy
+npx @composio/trustclaw deploy
 ```
 
 The CLI handles the entire deploy:
@@ -25,7 +25,7 @@ The CLI handles the entire deploy:
 
 ## Prerequisites
 
-- A [Vercel account](https://vercel.com) (`pnpm dlx vercel login` once)
+- A [Vercel account](https://vercel.com) (`npx vercel login` once)
 - A [GitHub account](https://github.com) with `gh` CLI installed (`gh auth login` once)
 - A free [Composio API key](https://dashboard.composio.dev/login?flow=developer)
 

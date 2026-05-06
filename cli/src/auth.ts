@@ -56,9 +56,9 @@ async function promptVercelLogin(reason: string): Promise<void> {
     initialValue: true,
   });
   if (isCancel(proceed) || !proceed) {
-    throw new Error("Cancelled. Run `pnpm dlx vercel login` and re-run cli:deploy.");
+    throw new Error("Cancelled. Run `npx vercel@53 login` and re-run cli:deploy.");
   }
-  const code = await runInteractive("pnpm", ["dlx", "vercel", "login"]);
+  const code = await runInteractive("npx", ["-y", "vercel@53", "login"]);
   if (code !== 0) {
     throw new Error(`vercel login exited with code ${code}.`);
   }

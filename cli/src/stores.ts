@@ -80,12 +80,13 @@ async function addIntegration(args: {
   // browser when additional setup (e.g. accepting marketplace terms,
   // choosing a region) is required.
   //
-  // Use `pnpm dlx vercel` rather than bare `vercel` so the CLI works for users
-  // who haven't run `npm i -g vercel`. pnpm caches the package after first
-  // download, so subsequent invocations are fast.
+  // Use `npx -y vercel@<pinned>` rather than bare `vercel` so the CLI works
+  // for users who haven't run `npm i -g vercel`. npx caches the package, so
+  // subsequent invocations are fast.
+  // Pinning to a known major insulates us from upstream flag/output drift.
   const planFlag = args.plan ? ` --plan ${args.plan}` : "";
   const cmd =
-    `pnpm dlx vercel@latest integration add ${args.integrationSlug}` +
+    `npx -y vercel@53 integration add ${args.integrationSlug}` +
     ` --name ${args.resourceName}` +
     ` -e production -e preview -e development` +
     ` --no-env-pull${planFlag}`;
